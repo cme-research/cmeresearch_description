@@ -2,6 +2,19 @@
 
 This package contains URDF/Xacro descriptions for various robots developed by CME Robotics. It provides 3D models, physical properties, and controller configurations for simulation and visualization in ROS environments.
 
+
+# ROS Distro Support #
+
+
+|         |                                           melodic                                            |      noetic      |                  rolling                  |
+|:-------:|:--------------------------------------------------------------------------------------------:|:----------------:|:-----------------------------------------:|
+| Branch  | [`melodic_dev`](https://bitbucket.org/cme-robotics/cmeresearch_description/src/melodic_dev/) |                  |   [`rolling_dev`] |
+| Status  |                                          supported                                           |  not supported   |  supported |
+| Version |                                       no yet released                                        | not yet released |    not yet released |
+
+
+
+
 ## Robot Models
 
 The package includes the following robot models:
@@ -97,7 +110,8 @@ Contributions to improve the robot descriptions or fix issues are welcome. Pleas
 
 ## Contact
 
-- Maintainer: CME Robotics (info@cme-robotics.com)
-- Website: [CME Robotics](https://www.cme-robotics.com)
+For more information, please contact:
+- Email: info@cme-robotics.com
+- Website: https://cme-robotics.com
 
 Last updated: August 2, 2025
