@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!-- Basic mecanum drive mobile base -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mecanumdrive_robot">
+    <xacro:arg name="prefix" default="" />
+    <xacro:arg name="use_mock_hardware" default="false" />
+
+    <xacro:include filename="$(find cmeresearch_description)/urdf/cmexaiii/cmexaiii_description.urdf.xacro" />
+
+    <!-- Import Rviz colors -->
+    <xacro:include filename="$(find cmeresearch_description)/urdf/materials.xacro" />
+
+    <!-- Import mecanum drive ros2_control description -->
+    <xacro:include filename="$(find cmeresearch_description)/urdf/cmexaiii/cmexaiii_mecanum.ros2_control.xacro" />
+
+    <xacro:cmexaiii prefix="$(arg prefix)" />
+
+    <xacro:cmexaiii_ros2_control
+            name="CMEXA" prefix="$(arg prefix)" use_mock_hardware="$(arg use_mock_hardware)"/>
+
+</robot>

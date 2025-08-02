@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="robot" value="$(optenv ROBOT NO_ROBOT_SET!)"/>
+  <param name="robot_description" command="$(find xacro)/xacro '$(find cmeresearch_description)/urdf/$(arg robot)/$(arg robot).urdf.xacro'"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+</launch>
