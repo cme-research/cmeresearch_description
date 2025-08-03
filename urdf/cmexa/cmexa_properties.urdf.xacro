@@ -11,14 +11,14 @@
   <xacro:property name="track" value="0.354" />
   <!-- vertical offset means height -->
   <xacro:property name="wheel_vertical_offset" value="0.01" />
-  <xacro:property name="footprint_vertical_offset" value="0.0" />
+  <xacro:property name="footprint_vertical_offset" value="0.025" />
 
-  <xacro:property name="wheel_radius" value="0.05" />
+  <xacro:property name="wheel_radius" value="0.050" />
   <xacro:property name="wheel_width" value="0.050" />
 
-  <xacro:property name="chassis_length" value="0.200" />
-  <xacro:property name="chassis_width" value="0.130" />
-  <xacro:property name="chassis_height" value="0.150" />
+  <xacro:property name="chassis_length" value="0.500" />
+  <xacro:property name="chassis_width" value="0.350" />
+  <xacro:property name="chassis_height" value="0.300" />
   <xacro:property name="chassis_mass" value="0.3" /> <!-- correct this later -->
 
   <xacro:property name="dummy_inertia" value="1e-09"/>
