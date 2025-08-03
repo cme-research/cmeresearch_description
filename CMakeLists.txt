@@ -52,7 +52,7 @@ install(FILES
  urdf/ash/ash.gazebo
  urdf/ash/ash.urdf.xacro
 
- DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf/ash/
+ DESTINATION share/${PROJECT_NAME}/urdf/ash/
 )
 
 install(FILES
@@ -60,7 +60,7 @@ install(FILES
  urdf/unicomini/unicomini.urdf.xacro
  urdf/unicomini/unicomini_properties.urdf.xacro
 
- DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf/unicomini/
+ DESTINATION share/${PROJECT_NAME}/urdf/unicomini/
 )
 
 install(FILES
@@ -70,7 +70,7 @@ install(FILES
  urdf/cmexa/cmexa_description.urdf.xacro
  urdf/cmexa/cmexa_mecanum.ros2_control.xacro
 
- DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf/cmexa/
+ DESTINATION share/${PROJECT_NAME}/urdf/cmexa/
 )
 
 install(FILES
@@ -80,7 +80,7 @@ install(FILES
  urdf/cmexaiii/cmexaiii_description.urdf.xacro
  urdf/cmexaiii/cmexaiii_mecanum.ros2_control.xacro
 
- DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf/cmexaiii/
+ DESTINATION share/${PROJECT_NAME}/urdf/cmexaiii/
 )
 
 
@@ -88,41 +88,41 @@ install(FILES
 install(FILES
  urdf/materials.xacro
 
- DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf/
+ DESTINATION share/${PROJECT_NAME}/urdf/
 )
 
 install(FILES
  meshes/ash/ash-base.stl
  meshes/ash/ash-wheel.stl
 
- DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/meshes/ash/
+ DESTINATION share/${PROJECT_NAME}/meshes/ash/
 )
 
 install(FILES
  meshes/unicomini/unicomini-base.stl
  meshes/unicomini/unicomini-wheel.stl
 
- DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/meshes/unicomini/
+ DESTINATION share/${PROJECT_NAME}/meshes/unicomini/
 )
 
 install(FILES
  meshes/cmexa/cmexa-base.stl
  meshes/cmexa/cmexa-wheel.stl
 
- DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/meshes/cmexa/
+ DESTINATION share/${PROJECT_NAME}/meshes/cmexa/
 )
 
 install(FILES
  meshes/cmexaiii/cmexaiii-base.stl
  meshes/cmexaiii/cmexaiii-wheel.stl
 
- DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/meshes/cmexaiii/
+ DESTINATION share/${PROJECT_NAME}/meshes/cmexaiii/
 )
 
 install(FILES
  launch/description.launch
  # myfile2
- DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch/
+ DESTINATION share/${PROJECT_NAME}/launch/
 )
 
 ament_package()
