@@ -9,8 +9,12 @@
     <!-- Import Rviz colors -->
     <xacro:include filename="$(find cmeresearch_description)/urdf/materials.xacro" />
 
+    <!-- Import ros2_control description -->
+    <xacro:include filename="$(find cmeresearch_description)/urdf/cmexaiii/cmexaiii_mecanum.ros2_control.xacro" />
 
     <xacro:cmexaiii prefix="$(arg prefix)" />
 
+    <xacro:cmexaiii_ros2_control
+            name="CMEXAIII" prefix="$(arg prefix)" use_mock_hardware="$(arg use_mock_hardware)"/>
 
 </robot>
