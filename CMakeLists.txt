@@ -49,14 +49,7 @@ install(FILES
 
  DESTINATION share/${PROJECT_NAME}/urdf/cmexa/
 )
-install(FILES
-        urdf/cmexa/diffbot.urdf.xacro
-        urdf/cmexa/diffbot.materials.xacro
-        urdf/cmexa/diffbot_description.urdf.xacro
-        urdf/cmexa/diffbot.ros2_control.xacro
 
-        DESTINATION share/${PROJECT_NAME}/urdf/cmexa/
-)
 install(FILES
  urdf/cmexaiii/cmexaiii.gazebo
  urdf/cmexaiii/cmexaiii.urdf.xacro
