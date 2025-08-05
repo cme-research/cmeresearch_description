@@ -19,10 +19,13 @@
   <xacro:property name="chassis_length" value="0.500" />
   <xacro:property name="chassis_width" value="0.350" />
   <xacro:property name="chassis_height" value="0.300" />
-  <xacro:property name="chassis_mass" value="0.3" /> <!-- correct this later -->
+  <xacro:property name="chassis_mass" value="0.3" />
 
   <xacro:property name="dummy_inertia" value="1e-09"/>
 
   <xacro:property name="mount_spacing" value="0.120" />
+
+  <xacro:property name="z_offset" value="-${chassis_height/2}" /> <!-- Space btw top of beam and the each joint -->
+  <xacro:property name="wheel_mass" value="0.3"/>
 
 </robot>

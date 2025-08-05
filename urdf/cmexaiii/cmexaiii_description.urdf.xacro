@@ -3,9 +3,6 @@
 
   <xacro:macro name="cmexaiii" params="prefix">
 
-  <!-- Robot constants and properties -->
-  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexaiii/cmexaiii_properties.urdf.xacro" />
-
   <xacro:property name="z_offset" value="-${chassis_height/2}" /> <!-- Space btw top of beam and the each joint -->
   <xacro:property name="wheel_mass" value="0.3"/>
   <!-- Base Link -->

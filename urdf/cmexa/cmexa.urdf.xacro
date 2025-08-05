@@ -1,32 +1,29 @@
 <?xml version="1.0"?>
 <!-- Basic mecanum drive mobile base -->
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mecanumdrive_robot">
-    <xacro:arg name="prefix" default="" />
-    <xacro:arg name="use_mock_hardware" default="false" />
+  <!-- Parameters -->
+  <xacro:arg name="prefix" default="" />
+  <xacro:arg name="use_mock_hardware" default="false" />
 
-    <!-- Robot constants and properties -->
-    <xacro:include filename="$(find cmeresearch_description)/urdf/cmexa/cmexa_properties.urdf.xacro" />
 
-    <!-- Import Rviz colors -->
-    <xacro:include filename="$(find cmeresearch_description)/urdf/materials.xacro" />
+  <!-- Import robot description -->
+  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexa/cmexa_description.urdf.xacro" />
 
-    <!-- Import robot description -->
-    <xacro:include filename="$(find cmeresearch_description)/urdf/cmexa/cmexa_description.urdf.xacro" />
+  <!-- Robot constants and properties -->
 
-    <!-- Import ros2_control description -->
-    <xacro:include filename="$(find cmeresearch_description)/urdf/cmexa/cmexa_mecanum.ros2_control.xacro" />
+  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexa/cmexa_properties.urdf.xacro" />
 
-    <!-- Instantiate the robot -->
-    <xacro:macro name="cmexa_robot" params="prefix">
-        <!-- Create the robot chassis and wheels -->
-        <xacro:cmexa prefix="${prefix}" />
+  <!-- Import Rviz colors -->
+  <xacro:include filename="$(find cmeresearch_description)/urdf/materials.xacro" />
 
-        <!-- Add ros2_control -->
-        <xacro:cmexa_ros2_control
-                name="CMEXA" prefix="${prefix}" use_mock_hardware="$(arg use_mock_hardware)"/>
-    </xacro:macro>
+  <!-- Import ros2_control description -->
+  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexa/cmexa_mecanum.ros2_control.xacro" />
 
-    <!-- Create the robot instance -->
-    <xacro:cmexa_robot prefix="$(arg prefix)" />
+  <!-- Instantiate the robot -->
+  <xacro:cmexa prefix="$(arg prefix)" />
+
+  <!-- Add ros2_control -->
+  <xacro:cmexa_ros2_control
+    name="Cmexa" prefix="$(arg prefix)" use_mock_hardware="$(arg use_mock_hardware)"/>
 
 </robot>
