@@ -4,17 +4,29 @@
     <xacro:arg name="prefix" default="" />
     <xacro:arg name="use_mock_hardware" default="false" />
 
-    <xacro:include filename="$(find cmeresearch_description)/urdf/cmexa/cmexa_description.urdf.xacro" />
+    <!-- Robot constants and properties -->
+    <xacro:include filename="$(find cmeresearch_description)/urdf/cmexa/cmexa_properties.urdf.xacro" />
 
     <!-- Import Rviz colors -->
     <xacro:include filename="$(find cmeresearch_description)/urdf/materials.xacro" />
 
+    <!-- Import robot description -->
+    <xacro:include filename="$(find cmeresearch_description)/urdf/cmexa/cmexa_description.urdf.xacro" />
+
     <!-- Import ros2_control description -->
     <xacro:include filename="$(find cmeresearch_description)/urdf/cmexa/cmexa_mecanum.ros2_control.xacro" />
 
-    <xacro:cmexa prefix="$(arg prefix)" />
+    <!-- Instantiate the robot -->
+    <xacro:macro name="cmexa_robot" params="prefix">
+        <!-- Create the robot chassis and wheels -->
+        <xacro:cmexa prefix="${prefix}" />
 
-    <xacro:cmexa_ros2_control
-            name="CMEXA" prefix="$(arg prefix)" use_mock_hardware="$(arg use_mock_hardware)"/>
+        <!-- Add ros2_control -->
+        <xacro:cmexa_ros2_control
+                name="CMEXA" prefix="${prefix}" use_mock_hardware="$(arg use_mock_hardware)"/>
+    </xacro:macro>
+
+    <!-- Create the robot instance -->
+    <xacro:cmexa_robot prefix="$(arg prefix)" />
 
 </robot>

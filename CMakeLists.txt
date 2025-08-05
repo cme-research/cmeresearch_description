@@ -98,7 +98,9 @@ install(FILES
 
 install(FILES
  launch/description.launch
- # myfile2
+ launch/cmexa_mecanum.launch.py
+ launch/cmexa_mecanum_description.launch.py
+
  DESTINATION share/${PROJECT_NAME}/launch/
 )
 

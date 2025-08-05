@@ -45,14 +45,6 @@ ENV CATKIN_WS=/robot/ros2_ws
 RUN mkdir -p /robot/ros2_ws/src/cmeresearch_description
 COPY ./cmeresearch_description /robot/ros2_ws/src/cmeresearch_description
 
-#### unico_msgs ###
-RUN mkdir -p /robot/ros2_ws/src/unico_msgs
-COPY ./unico_msgs /robot/ros2_ws/src/unico_msgs
-
-#### robot_base ###
-RUN mkdir -p /robot/ros2_ws/src/cmexa_base
-COPY ./cmexa_base /robot/ros2_ws/src/cmexa_base
-
 # add package specific ros dependencies to workspace
 RUN source /opt/ros/rolling/setup.bash \
     && cd /robot/ros2_ws/  \
@@ -84,4 +76,4 @@ RUN chmod +x /ros_entrypoint.sh
 ENV ROBOT=cmexa
 
 ENTRYPOINT ["/ros_entrypoint.sh"]
-CMD ["ros2", "launch", "cmeresearch_description", "cmexa_mecanum.launch.py"]
+CMD ["ros2", "launch", "cmeresearch_description", "cmexa_mecanum_description.launch.py"]

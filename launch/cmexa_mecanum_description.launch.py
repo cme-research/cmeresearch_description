@@ -16,7 +16,7 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "gui",
-            default_value="false",
+            default_value="true",
             description="Start RViz2 automatically with this launch file.",
         )
     )
@@ -35,7 +35,7 @@ def generate_launch_description():
             PathJoinSubstitution([FindExecutable(name="xacro")]),
             " ",
             PathJoinSubstitution(
-                [FindPackageShare("cmeresearch_description"), "urdf", "cmexa/cmexaiii.urdf.xacro"]
+                [FindPackageShare("cmeresearch_description"), "urdf", "cmexa/cmexa.urdf.xacro"]
             ),
             " ",
             "use_mock_hardware:=",
@@ -53,12 +53,6 @@ def generate_launch_description():
         ]
     )
 
-    control_node = Node(
-        package="controller_manager",
-        executable="ros2_control_node",
-        parameters=[robot_controllers],
-        output="both",
-    )
     robot_state_pub_node = Node(
         package="robot_state_publisher",
         executable="robot_state_publisher",
@@ -66,36 +60,6 @@ def generate_launch_description():
         parameters=[robot_description],
     )
 
-    joint_state_broadcaster_spawner = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["joint_state_broadcaster"],
-    )
-
-    robot_controller_spawner = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=[
-            "cmexa_base_mecanum_controller",
-            "--param-file",
-            robot_controllers,
-            "--controller-ros-args",
-            "-r /cmd_vel:=/cmd_vel",
-        ],
-    )
-
-    # Delay start of joint_state_broadcaster after `robot_controller`
-    # TODO(anyone): This is a workaround for flaky tests. Remove when fixed.
-    delay_joint_state_broadcaster_after_robot_controller_spawner = RegisterEventHandler(
-        event_handler=OnProcessExit(
-            target_action=robot_controller_spawner,
-            on_exit=[joint_state_broadcaster_spawner],
-        )
-    )
-
-    nodes = [control_node,
-             robot_state_pub_node,
-             robot_controller_spawner,
-             delay_joint_state_broadcaster_after_robot_controller_spawner]
+    nodes = [robot_state_pub_node]
 
     return LaunchDescription(declared_arguments + nodes)
