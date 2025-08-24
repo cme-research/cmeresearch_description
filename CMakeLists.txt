@@ -104,4 +104,11 @@ install(FILES
  DESTINATION share/${PROJECT_NAME}/launch/
 )
 
+# for simulation and testing
+install(FILES
+ config/cmexa/cmexa_base_mecanum_controllers.yaml
+
+ DESTINATION share/${PROJECT_NAME}/config/
+)
+
 ament_package()

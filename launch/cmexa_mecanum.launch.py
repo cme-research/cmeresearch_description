@@ -35,7 +35,7 @@ def generate_launch_description():
             PathJoinSubstitution([FindExecutable(name="xacro")]),
             " ",
             PathJoinSubstitution(
-                [FindPackageShare("cmeresearch_description"), "urdf", "cmexa/cmexaiii.urdf.xacro"]
+                [FindPackageShare("cmeresearch_description"), "urdf", "cmexa/cmexa.urdf.xacro"]
             ),
             " ",
             "use_mock_hardware:=",
