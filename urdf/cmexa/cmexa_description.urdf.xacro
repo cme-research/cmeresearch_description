@@ -74,7 +74,7 @@
     <origin xyz="${wheelbase/2} ${track/2} ${wheel_radius/2}" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="0.2"/>
-    <limit effort="100" velocity="1.0"/>
+    <limit effort="100" velocity="5.0"/>
   </joint>
 
 
@@ -87,7 +87,7 @@
     <origin xyz="${-wheelbase/2} ${track/2} ${wheel_radius/2}" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="0.2"/>
-    <limit effort="100" velocity="1.0"/>
+    <limit effort="100" velocity="5.0"/>
   </joint>
 
   <!-- front right wheel Link -->
@@ -127,7 +127,7 @@
     <origin xyz="${wheelbase/2} ${-track/2} ${wheel_radius/2}" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="0.2"/>
-    <limit effort="100" velocity="1.0"/>
+    <limit effort="100" velocity="5.0"/>
   </joint>
 
   <!-- rear left wheel Link -->
@@ -166,7 +166,7 @@
     <origin xyz="${-wheelbase/2} ${-track/2} ${wheel_radius/2}" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="0.2"/>
-    <limit effort="100" velocity="1.0"/>
+    <limit effort="100" velocity="5.0"/>
   </joint>
 
   <!-- rear right wheel Link -->
