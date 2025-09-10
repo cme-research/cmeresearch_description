@@ -9,7 +9,7 @@
           <plugin>cmexa_base/CmexaMecanumBotSystemHardware</plugin>
             <param name="example_param_hw_start_duration_sec">0</param>
             <param name="example_param_hw_stop_duration_sec">3.0</param>
-            <param name="wheel_radius">0.05</param>
+            <param name="gear_ratio">5.0</param>
         </hardware>
         </xacro:unless>
         <xacro:if value="${use_mock_hardware}">
