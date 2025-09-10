@@ -77,6 +77,18 @@
     <limit effort="100" velocity="25.0"/>
   </joint>
 
+  <!-- Transmission for FRONT LEFT WHEEL -->
+  <transmission name="${prefix}front_left_wheel_trans">
+   <type>transmission_interface/SimpleTransmission</type>
+   <joint name="${prefix}front_left_wheel_joint">
+     <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="${prefix}front_left_motor">
+     <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+     <mechanicalReduction>${gear_ratio}</mechanicalReduction>
+   </actuator>
+</transmission>
+
 
 
   <!-- Front right wheel -->
@@ -89,6 +101,18 @@
     <dynamics damping="0.2"/>
     <limit effort="100" velocity="25.0"/>
   </joint>
+
+  <!-- Transmission for FRONT RIGHT WHEEL -->
+  <transmission name="${prefix}front_right_wheel_trans">
+   <type>transmission_interface/SimpleTransmission</type>
+   <joint name="${prefix}front_right_wheel_joint">
+     <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+   </joint>
+   <actuator name="${prefix}front_right_motor">
+     <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+     <mechanicalReduction>${gear_ratio}</mechanicalReduction>
+   </actuator>
+  </transmission>
 
   <!-- front right wheel Link -->
 
@@ -130,6 +154,18 @@
     <limit effort="100" velocity="25.0"/>
   </joint>
 
+   <!-- Transmission for REAR LEFT WHEEL -->
+   <transmission name="${prefix}rear_left_wheel_trans">
+     <type>transmission_interface/SimpleTransmission</type>
+     <joint name="${prefix}rear_left_wheel_joint">
+       <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+     </joint>
+     <actuator name="${prefix}rear_left_motor">
+       <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+       <mechanicalReduction>${gear_ratio}</mechanicalReduction>
+     </actuator>
+   </transmission>
+
   <!-- rear left wheel Link -->
 
   <link name="${prefix}rear_left_wheel">
@@ -168,6 +204,18 @@
     <dynamics damping="0.2"/>
     <limit effort="100" velocity="25.0"/>
   </joint>
+
+   <!-- Transmission for REAR RIGHT WHEEL -->
+   <transmission name="${prefix}rear_right_wheel_trans">
+     <type>transmission_interface/SimpleTransmission</type>
+     <joint name="${prefix}rear_right_wheel_joint">
+       <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+     </joint>
+     <actuator name="${prefix}rear_right_motor">
+       <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+       <mechanicalReduction>${gear_ratio}</mechanicalReduction>
+     </actuator>
+   </transmission>
 
   <!-- rear right wheel Link -->
 

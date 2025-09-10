@@ -13,8 +13,9 @@
   <xacro:property name="wheel_vertical_offset" value="0.01" />
   <xacro:property name="footprint_vertical_offset" value="0.025" />
 
-  <xacro:property name="wheel_radius" value="0.001" />
-  <xacro:property name="wheel_width" value="0.001" />
+  <xacro:property name="wheel_radius" value="0.05" />
+  <xacro:property name="wheel_width" value="0.05" />
+  <xacro:property name="gear_ratio" value="5.0"/>
 
   <xacro:property name="chassis_length" value="0.500" />
   <xacro:property name="chassis_width" value="0.350" />
