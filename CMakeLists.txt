@@ -51,6 +51,16 @@ install(FILES
 )
 
 install(FILES
+ urdf/cmexb/cmexb.gazebo
+ urdf/cmexb/cmexb.urdf.xacro
+ urdf/cmexb/cmexb_properties.urdf.xacro
+ urdf/cmexb/cmexb_description.urdf.xacro
+ urdf/cmexb/cmexb_diff.ros2_control.xacro
+
+ DESTINATION share/${PROJECT_NAME}/urdf/cmexb/
+)
+
+install(FILES
  urdf/cmexaiii/cmexaiii.gazebo
  urdf/cmexaiii/cmexaiii.urdf.xacro
  urdf/cmexaiii/cmexaiii_properties.urdf.xacro
@@ -88,6 +98,14 @@ install(FILES
 
  DESTINATION share/${PROJECT_NAME}/meshes/cmexa/
 )
+
+install(FILES
+ meshes/cmexb/cmexb-base.stl
+ meshes/cmexb/cmexb-wheel.stl
+
+ DESTINATION share/${PROJECT_NAME}/meshes/cmexb/
+)
+
 
 install(FILES
  meshes/cmexaiii/cmexaiii-base.stl

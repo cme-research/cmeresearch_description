@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!-- Basic mecanum drive mobile base -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="diffdrive_robot">
+  <!-- Parameters -->
+  <xacro:arg name="prefix" default="" />
+  <xacro:arg name="use_mock_hardware" default="false" />
+
+
+  <!-- Import robot description -->
+  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexb/cmexb_description.urdf.xacro" />
+
+  <!-- Robot constants and properties -->
+
+  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexb/cmexb_properties.urdf.xacro" />
+
+  <!-- Import Rviz colors -->
+  <xacro:include filename="$(find cmeresearch_description)/urdf/materials.xacro" />
+
+  <!-- Import ros2_control description -->
+  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexb/cmexb_diff.ros2_control.xacro" />
+
+  <!-- Instantiate the robot -->
+  <xacro:cmexb prefix="$(arg prefix)" />
+
+  <!-- Add ros2_control -->
+  <xacro:cmexb_ros2_control
+    name="Cmexb" prefix="$(arg prefix)" use_mock_hardware="$(arg use_mock_hardware)"/>
+
+</robot>

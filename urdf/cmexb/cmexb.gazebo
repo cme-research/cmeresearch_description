@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<robot>
+  <!-- ros_control plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo>
+
+  <!--
+    The plugin broadcasts a body's pose and rates through ROS nav_msgs::Odometry message.
+    The plugin broadcasts pose and rate of a body named "chassis" over ROS topic name "my_robot/odom".
+  -->
+  <gazebo>
+    <plugin name="ground_truth"
+            filename="libgazebo_ros_p3d.so">
+      <frameName>map</frameName>
+      <bodyName>chassis</bodyName>
+      <topicName>cmexa/odom</topicName>
+      <updateRate>30.0</updateRate>
+      <gaussianNoise>0.0</gaussianNoise>
+    </plugin>
+  </gazebo>
+
+  <gazebo reference="base_link">
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+  <gazebo reference="chassis_link">
+    <material>Gazebo/Green</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+</robot>
