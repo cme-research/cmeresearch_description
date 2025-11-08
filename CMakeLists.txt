@@ -57,7 +57,7 @@ install(FILES
  urdf/cmexamini/cmexamini_description.urdf.xacro
  urdf/cmexamini/cmexamini_diff.ros2_control.xacro
 
- DESTINATION share/${PROJECT_NAME}/urdf/
+ DESTINATION share/${PROJECT_NAME}/urdf/cmexamini/
 )
 
 install(FILES
