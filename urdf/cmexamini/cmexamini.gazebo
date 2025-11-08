@@ -16,7 +16,7 @@
             filename="libgazebo_ros_p3d.so">
       <frameName>map</frameName>
       <bodyName>chassis</bodyName>
-      <topicName>cmexa/odom</topicName>
+      <topicName>cmexamini/odom</topicName>
       <updateRate>30.0</updateRate>
       <gaussianNoise>0.0</gaussianNoise>
     </plugin>

@@ -7,23 +7,23 @@
 
 
   <!-- Import robot description -->
-  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexb/cmexb_description.urdf.xacro" />
+  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexamini/cmexamini_description.urdf.xacro" />
 
   <!-- Robot constants and properties -->
 
-  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexb/cmexb_properties.urdf.xacro" />
+  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexamini/cmexamini_properties.urdf.xacro" />
 
   <!-- Import Rviz colors -->
   <xacro:include filename="$(find cmeresearch_description)/urdf/materials.xacro" />
 
   <!-- Import ros2_control description -->
-  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexb/cmexb_diff.ros2_control.xacro" />
+  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexamini/cmexamini_diff.ros2_control.xacro" />
 
   <!-- Instantiate the robot -->
   <xacro:cmexb prefix="$(arg prefix)" />
 
   <!-- Add ros2_control -->
-  <xacro:cmexb_ros2_control
-    name="Cmexb" prefix="$(arg prefix)" use_mock_hardware="$(arg use_mock_hardware)"/>
+  <xacro:cmexamini_ros2_control
+    name="CMEXAMINI" prefix="$(arg prefix)" use_mock_hardware="$(arg use_mock_hardware)"/>
 
 </robot>

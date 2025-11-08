@@ -51,13 +51,13 @@ install(FILES
 )
 
 install(FILES
- urdf/cmexb/cmexb.gazebo
- urdf/cmexb/cmexb.urdf.xacro
- urdf/cmexb/cmexb_properties.urdf.xacro
- urdf/cmexb/cmexb_description.urdf.xacro
- urdf/cmexb/cmexb_diff.ros2_control.xacro
+ urdf/cmexamini/cmexamini.gazebo
+ urdf/cmexamini/cmexamini.urdf.xacro
+ urdf/cmexamini/cmexamini_properties.urdf.xacro
+ urdf/cmexamini/cmexamini_description.urdf.xacro
+ urdf/cmexamini/cmexamini_diff.ros2_control.xacro
 
- DESTINATION share/${PROJECT_NAME}/urdf/cmexb/
+ DESTINATION share/${PROJECT_NAME}/urdf/
 )
 
 install(FILES
@@ -100,10 +100,10 @@ install(FILES
 )
 
 install(FILES
- meshes/cmexb/cmexb-base.stl
- meshes/cmexb/cmexb-wheel.stl
+ meshes/cmexamini/cmexamini-base.stl
+ meshes/cmexamini/cmexamini-wheel.stl
 
- DESTINATION share/${PROJECT_NAME}/meshes/cmexb/
+ DESTINATION share/${PROJECT_NAME}/meshes/cmexamini/
 )
 
 
@@ -118,15 +118,40 @@ install(FILES
  launch/description.launch
  launch/cmexa_mecanum.launch.py
  launch/cmexa_mecanum_description.launch.py
+ launch/cmexamini_diff.launch.py
+ launch/diffbot.launch.py
 
  DESTINATION share/${PROJECT_NAME}/launch/
 )
 
+install(FILES
+ urdf/diffbot/diffbot.materials.xacro
+ urdf/diffbot/diffbot.ros2_control.xacro
+ urdf/diffbot/diffbot.urdf.xacro
+ urdf/diffbot/diffbot_description.urdf.xacro
+
+ DESTINATION share/${PROJECT_NAME}/urdf/
+)
+
+install(FILES
+  rviz/diffbot.rviz
+  rviz/diffbot_view.rviz
+
+ DESTINATION share/${PROJECT_NAME}/rviz
+)
 # for simulation and testing
 install(FILES
  config/cmexa/cmexa_base_mecanum_controllers.yaml
+ config/cmexamini/cmexamini_base_diff_controllers.yaml
 
  DESTINATION share/${PROJECT_NAME}/config/
+)
+
+
+install(FILES
+  config/diffbot/diffbot_controllers.yaml
+
+  DESTINATION share/${PROJECT_NAME}/config/
 )
 
 ament_package()
