@@ -51,6 +51,15 @@ install(FILES
 )
 
 install(FILES
+ urdf/diffbot/diffbot.materials.xacro
+ urdf/diffbot/diffbot.urdf.xacro
+ urdf/diffbot/diffbot_description.urdf.xacro
+ urdf/diffbot/diffbot.ros2_control.xacro
+
+ DESTINATION share/${PROJECT_NAME}/urdf/diffbot/
+)
+
+install(FILES
  urdf/cmexamini/cmexamini.gazebo
  urdf/cmexamini/cmexamini.urdf.xacro
  urdf/cmexamini/cmexamini_properties.urdf.xacro

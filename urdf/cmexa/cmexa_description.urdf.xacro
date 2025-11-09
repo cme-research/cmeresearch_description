@@ -101,8 +101,8 @@
     <dynamics damping="0.2"/>
     <limit effort="100" velocity="15.0"/>
   </joint>
-
   <!-- Transmission for FRONT RIGHT WHEEL -->
+
   <transmission name="${prefix}front_right_wheel_trans">
    <type>transmission_interface/SimpleTransmission</type>
    <joint name="${prefix}front_right_wheel_joint">
@@ -155,6 +155,7 @@
   </joint>
 
    <!-- Transmission for REAR LEFT WHEEL -->
+
    <transmission name="${prefix}rear_left_wheel_trans">
      <type>transmission_interface/SimpleTransmission</type>
      <joint name="${prefix}rear_left_wheel_joint">
