@@ -189,5 +189,74 @@
       </inertial>
     </link>
 
+    <!-- base_laser_front_joint -->
+    <joint name="base_laser_front_joint" type="fixed">
+      <origin xyz="-0.460 -0.257 0.18" rpy="0 0 -0.785" />
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}base_laser_front_left" />
+    </joint>
+
+    <!-- front left laser Link -->
+    <link name="${prefix}base_laser_front_left">
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="0.1" radius="0.05"/>
+        </geometry>
+      </collision>
+
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="0.1" radius="0.05"/>
+        </geometry>
+        <material name="orange"/>
+      </visual>
+
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1"/>
+        <inertia
+                ixx="${wheel_mass / 12.0 * (3*wheel_radius*wheel_radius + wheel_width*wheel_width)}" ixy="0.0" ixz="0.0"
+                iyy="${wheel_mass / 12.0 * (3*wheel_radius*wheel_radius + wheel_width*wheel_width)}" iyz="0.0"
+                izz="${wheel_mass / 2.0 * wheel_radius*wheel_radius}"/>
+      </inertial>
+    </link>
+
+    <!-- base_laser_rear_joint -->
+    <joint name="base_laser_rear_joint" type="fixed">
+      <origin xyz="0.460 0.257 0.18" rpy="0 0 -0.785" />
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}base_laser_rear_right" />
+    </joint>
+
+
+    <!-- front left laser Link -->
+    <link name="${prefix}base_laser_rear_right">
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="0.1" radius="0.05"/>
+        </geometry>
+      </collision>
+
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="0.1" radius="0.05"/>
+        </geometry>
+        <material name="orange"/>
+      </visual>
+
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1"/>
+        <inertia
+                ixx="${wheel_mass / 12.0 * (3*wheel_radius*wheel_radius + wheel_width*wheel_width)}" ixy="0.0" ixz="0.0"
+                iyy="${wheel_mass / 12.0 * (3*wheel_radius*wheel_radius + wheel_width*wheel_width)}" iyz="0.0"
+                izz="${wheel_mass / 2.0 * wheel_radius*wheel_radius}"/>
+      </inertial>
+    </link>
+
   </xacro:macro>
 </robot>
