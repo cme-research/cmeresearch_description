@@ -17,16 +17,10 @@
     <xacro:include filename="$(find cmeresearch_description)/urdf/cmexaiii/cmexaiii_mecanum.ros2_control.xacro" />
 
     <!-- Instantiate the robot -->
-    <xacro:macro name="cmexa_robot" params="prefix">
-        <!-- Create the robot chassis and wheels -->
-        <xacro:cmexa prefix="${prefix}" />
+    <xacro:cmexaiii prefix="${prefix}" />
 
-        <!-- Add ros2_control -->
-        <xacro:cmexa_ros2_control
-                name="CMEXAIII" prefix="${prefix}" use_mock_hardware="$(arg use_mock_hardware)"/>
-    </xacro:macro>
+    <!-- Add ros2_control -->
+    <xacro:cmexaiii_ros2_control name="CMEXAIII" prefix="${prefix}" use_mock_hardware="$(arg use_mock_hardware)"/>
 
-    <!-- Create the robot instance -->
-    <xacro:cmexaiii_robot prefix="$(arg prefix)" />
 
 </robot>
