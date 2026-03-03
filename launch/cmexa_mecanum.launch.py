@@ -1,12 +1,11 @@
 from launch import LaunchDescription
-from launch_ros.actions import Node
-from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, RegisterEventHandler
 from launch.conditions import IfCondition
 from launch.event_handlers import OnProcessExit
-from launch.substitutions import Command, FindExecutable, PathJoinSubstitution, LaunchConfiguration
+from launch.substitutions import Command, FindExecutable, PathJoinSubstitution, LaunchConfiguration, EnvironmentVariable
 
 from launch_ros.actions import Node
+from launch_ros.parameter_descriptions import ParameterValue
 from launch_ros.substitutions import FindPackageShare
 
 
@@ -27,29 +26,41 @@ def generate_launch_description():
             description="Start robot with mock hardware mirroring command to its states.",
         )
     )
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            "robot",
+            default_value=EnvironmentVariable("ROBOT", default_value="cmexa"),
+            description="Name of the robot.",
+        )
+    )
     gui = LaunchConfiguration("gui")
     use_mock_hardware = LaunchConfiguration("use_mock_hardware")
+    robot = LaunchConfiguration("robot")
 
     robot_description_content = Command(
         [
             PathJoinSubstitution([FindExecutable(name="xacro")]),
             " ",
             PathJoinSubstitution(
-                [FindPackageShare("cmeresearch_description"), "urdf", "cmexa/cmexa.urdf.xacro"]
+                [FindPackageShare("cmeresearch_description"), "urdf", robot, [robot, ".urdf.xacro"]]
             ),
             " ",
             "use_mock_hardware:=",
             use_mock_hardware,
+            " ",
+            "prefix:=",
+            robot,
         ]
     )
 
-    robot_description = {"robot_description": robot_description_content}
+    robot_description = {"robot_description": ParameterValue(robot_description_content, value_type=str)}
 
     robot_controllers = PathJoinSubstitution(
         [
             FindPackageShare("cmeresearch_description"),
             "config",
-            "cmexa_base_mecanum_controllers.yaml",
+            robot,
+            "base_mecanum_controllers.yaml",
         ]
     )
 
@@ -76,11 +87,12 @@ def generate_launch_description():
         package="controller_manager",
         executable="spawner",
         arguments=[
-            "cmexa_base_mecanum_controller",
+            [robot, "_base_mecanum_controller"],
             "--param-file",
             robot_controllers,
             "--controller-ros-args",
             "-r /cmd_vel:=/cmd_vel",
+            "--activate"
         ],
     )
 

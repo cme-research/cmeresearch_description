@@ -62,7 +62,7 @@ def generate_launch_description():
         [
             FindPackageShare("cmeresearch_description"),
             "config",
-            "cmexa_base_mecanum_controllers.yaml",
+            "base_mecanum_controllers.yaml",
         ]
     )
 

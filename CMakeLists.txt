@@ -150,17 +150,21 @@ install(FILES
 )
 # for simulation and testing
 install(FILES
- config/cmexa/cmexa_base_mecanum_controllers.yaml
- config/cmexamini/cmexamini_base_diff_controllers.yaml
+  config/cmexa/base_mecanum_controllers.yaml
 
- DESTINATION share/${PROJECT_NAME}/config/
+  DESTINATION share/${PROJECT_NAME}/config/cmexa/
 )
 
+install(FILES
+  config/cmexaiii/base_mecanum_controllers.yaml
+
+  DESTINATION share/${PROJECT_NAME}/config/cmexaiii/
+)
 
 install(FILES
-  config/diffbot/diffbot_controllers.yaml
+  config/cmexamini/base_diff_controllers.yaml
 
-  DESTINATION share/${PROJECT_NAME}/config/
+  DESTINATION share/${PROJECT_NAME}/config/cmexamini/
 )
 
 ament_package()

@@ -63,7 +63,7 @@ def generate_launch_description():
         [
             FindPackageShare("cmeresearch_description"),
             "config",
-            "cmexamini_base_diff_controllers.yaml",
+            "base_diff_controllers.yaml",
         ]
     )
     rviz_config_file = PathJoinSubstitution(

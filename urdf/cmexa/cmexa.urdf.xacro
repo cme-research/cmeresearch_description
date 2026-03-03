@@ -2,7 +2,6 @@
 <!-- Basic mecanum drive mobile base -->
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mecanumdrive_robot">
   <!-- Parameters -->
-  <xacro:arg name="prefix" default="" />
   <xacro:arg name="use_mock_hardware" default="false" />
 
 
@@ -20,10 +19,10 @@
   <xacro:include filename="$(find cmeresearch_description)/urdf/cmexa/cmexa_mecanum.ros2_control.xacro" />
 
   <!-- Instantiate the robot -->
-  <xacro:cmexa prefix="$(arg prefix)" />
+  <xacro:cmexa />
 
   <!-- Add ros2_control -->
   <xacro:cmexa_ros2_control
-    name="Cmexa" prefix="$(arg prefix)" use_mock_hardware="$(arg use_mock_hardware)"/>
+    name="Cmexa" use_mock_hardware="$(arg use_mock_hardware)"/>
 
 </robot>
