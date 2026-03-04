@@ -227,7 +227,7 @@
 
     <!-- base_laser_rear_joint -->
     <joint name="base_laser_rear_joint" type="fixed">
-      <origin xyz="-0.460 -0.257 0.18" rpy="0 0 1.5708" />
+      <origin xyz="-0.460 -0.257 0.18" rpy="0 0 2.3562" />
       <parent link="base_link"/>
       <child link="base_laser_rear_right" />
     </joint>
