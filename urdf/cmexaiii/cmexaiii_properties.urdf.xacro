@@ -9,6 +9,8 @@
   <!-- track = distance between wheels (y-direction)
        example: distance between wheel_front_right and wheel_front_left -->
   <xacro:property name="track" value="0.354" />
+  <xacro:property name="gear_ratio" value="5.0" />
+  <xacro:property name="steps_per_revolution" value="200.0" />
   <!-- vertical offset means height -->
   <xacro:property name="wheel_vertical_offset" value="0.01" />
   <xacro:property name="footprint_vertical_offset" value="0.025" />
