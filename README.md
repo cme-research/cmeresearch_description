@@ -88,7 +88,7 @@ roslaunch cmeresearch_description description.launch robot:=cmexa
 
 #### ROS2
 ```bash
-ros2 launch cmeresearch_description cmexa_mecanum.launch.py gui:=true
+ros2 launch cmeresearch_description cmexaiii_mecanum.launch.py gui:=true
 ```
 
 ### Simulation

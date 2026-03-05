@@ -125,7 +125,7 @@ install(FILES
 
 install(FILES
  launch/description.launch
- launch/cmexa_mecanum.launch.py
+ launch/cmexaiii_mecanum.launch.py
  launch/cmexa_mecanum_description.launch.py
  launch/cmexamini_diff.launch.py
  launch/diffbot.launch.py

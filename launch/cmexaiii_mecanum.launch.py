@@ -53,6 +53,7 @@ def generate_launch_description():
         ]
     )
 
+
     robot_description = {"robot_description": ParameterValue(robot_description_content, value_type=str)}
 
     robot_controllers = PathJoinSubstitution(
@@ -74,7 +75,9 @@ def generate_launch_description():
         package="robot_state_publisher",
         executable="robot_state_publisher",
         output="both",
-        parameters=[robot_description],
+        parameters=[
+            robot_description,
+        ],
     )
 
     joint_state_broadcaster_spawner = Node(
@@ -87,11 +90,11 @@ def generate_launch_description():
         package="controller_manager",
         executable="spawner",
         arguments=[
-            [robot, "_base_mecanum_controller"],
+            ["base_mecanum_controller"],
             "--param-file",
             robot_controllers,
             "--controller-ros-args",
-            "-r /cmd_vel:=/cmd_vel",
+            "-r /base_mecanum_controller/reference:=/base_mecanum_controller/cmd_vel",
             "--activate"
         ],
     )
