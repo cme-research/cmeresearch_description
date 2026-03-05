@@ -41,11 +41,11 @@ install(FILES
 )
 
 install(FILES
- urdf/cmexa/cmexa.gazebo
- urdf/cmexa/cmexa.urdf.xacro
- urdf/cmexa/cmexa_properties.urdf.xacro
- urdf/cmexa/cmexa_description.urdf.xacro
- urdf/cmexa/cmexa_mecanum.ros2_control.xacro
+ urdf/cmexa/robot.gazebo
+ urdf/cmexa/robot.urdf.xacro
+ urdf/cmexa/robot_properties.urdf.xacro
+ urdf/cmexa/robot_description.urdf.xacro
+ urdf/cmexa/robot_mecanum.ros2_control.xacro
 
  DESTINATION share/${PROJECT_NAME}/urdf/cmexa/
 )
@@ -60,21 +60,21 @@ install(FILES
 )
 
 install(FILES
- urdf/cmexamini/cmexamini.gazebo
- urdf/cmexamini/cmexamini.urdf.xacro
- urdf/cmexamini/cmexamini_properties.urdf.xacro
- urdf/cmexamini/cmexamini_description.urdf.xacro
- urdf/cmexamini/cmexamini_diff.ros2_control.xacro
+ urdf/cmexamini/robot.gazebo
+ urdf/cmexamini/robot.urdf.xacro
+ urdf/cmexamini/robot_properties.urdf.xacro
+ urdf/cmexamini/robot_description.urdf.xacro
+ urdf/cmexamini/robot_diff.ros2_control.xacro
 
  DESTINATION share/${PROJECT_NAME}/urdf/cmexamini/
 )
 
 install(FILES
- urdf/cmexaiii/cmexaiii.gazebo
- urdf/cmexaiii/cmexaiii.urdf.xacro
- urdf/cmexaiii/cmexaiii_properties.urdf.xacro
- urdf/cmexaiii/cmexaiii_description.urdf.xacro
- urdf/cmexaiii/cmexaiii_mecanum.ros2_control.xacro
+ urdf/cmexaiii/robot.gazebo
+ urdf/cmexaiii/robot.urdf.xacro
+ urdf/cmexaiii/robot_properties.urdf.xacro
+ urdf/cmexaiii/robot_description.urdf.xacro
+ urdf/cmexaiii/robot_mecanum.ros2_control.xacro
 
  DESTINATION share/${PROJECT_NAME}/urdf/cmexaiii/
 )

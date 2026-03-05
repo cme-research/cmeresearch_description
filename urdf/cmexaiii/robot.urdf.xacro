@@ -5,16 +5,16 @@
     <xacro:arg name="prefix" default="cmexaiii" />
 
     <!-- Robot constants and properties -->
-    <xacro:include filename="$(find cmeresearch_description)/urdf/cmexaiii/cmexaiii_properties.urdf.xacro" />
+    <xacro:include filename="$(find cmeresearch_description)/urdf/cmexaiii/robot_properties.urdf.xacro" />
 
     <!-- Import Rviz colors -->
     <xacro:include filename="$(find cmeresearch_description)/urdf/materials.xacro" />
 
     <!-- Import robot description -->
-    <xacro:include filename="$(find cmeresearch_description)/urdf/cmexaiii/cmexaiii_description.urdf.xacro" />
+    <xacro:include filename="$(find cmeresearch_description)/urdf/cmexaiii/robot_description.urdf.xacro" />
 
     <!-- Import ros2_control description -->
-    <xacro:include filename="$(find cmeresearch_description)/urdf/cmexaiii/cmexaiii_mecanum.ros2_control.xacro" />
+    <xacro:include filename="$(find cmeresearch_description)/urdf/cmexaiii/robot_mecanum.ros2_control.xacro" />
 
     <!-- Instantiate the robot -->
     <xacro:cmexaiii prefix="$(arg prefix)"/>
