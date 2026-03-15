@@ -29,7 +29,7 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "robot",
-            default_value=EnvironmentVariable("ROBOT", default_value="cmexa"),
+            default_value=EnvironmentVariable("ROBOT", default_value="cmexaiii"),
             description="Name of the robot.",
         )
     )
@@ -47,9 +47,6 @@ def generate_launch_description():
             " ",
             "use_mock_hardware:=",
             use_mock_hardware,
-            " ",
-            "prefix:=",
-            robot,
         ]
     )
 
