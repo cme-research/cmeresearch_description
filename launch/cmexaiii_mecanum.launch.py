@@ -96,6 +96,17 @@ def generate_launch_description():
         ],
     )
 
+    tf_odom_relay = Node(
+        package='topic_tools',
+        executable='relay',
+        name='odom_tf_relay',
+        parameters=[{
+            'input_topic': '/base_mecanum_controller/tf_odometry',
+            'output_topic': '/tf',
+        }],
+        output='screen',
+    )
+
     # Delay start of joint_state_broadcaster after `robot_controller`
     # TODO(anyone): This is a workaround for flaky tests. Remove when fixed.
     delay_joint_state_broadcaster_after_robot_controller_spawner = RegisterEventHandler(
@@ -108,6 +119,7 @@ def generate_launch_description():
     nodes = [control_node,
              robot_state_pub_node,
              robot_controller_spawner,
-             delay_joint_state_broadcaster_after_robot_controller_spawner]
+             delay_joint_state_broadcaster_after_robot_controller_spawner,
+             tf_odom_relay]
 
     return LaunchDescription(declared_arguments + nodes)

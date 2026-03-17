@@ -19,6 +19,7 @@
   <depend>diff_drive_controller</depend>
   <depend>mecanum_drive_controller</depend>
   <depend>joint_state_broadcaster</depend>
+  <depend>topic_tools</depend>
 
   <member_of_group>rosidl_interface_packages</member_of_group>
 
