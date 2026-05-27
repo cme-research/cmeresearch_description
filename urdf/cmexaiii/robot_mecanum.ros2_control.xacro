@@ -14,6 +14,7 @@
                     <param name="wheel_separation_x">${wheelbase}</param>
                     <param name="wheel_separation_y">${track}</param>
                     <param name="steps_per_revolution">${steps_per_revolution}</param>
+                    <param name="step_resolution">${step_resolution}</param>
                 </hardware>
             </xacro:unless>
             <xacro:if value="${use_mock_hardware}">

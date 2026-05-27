@@ -16,6 +16,10 @@
   <xacro:property name="wheel_radius" value="0.05" />
   <xacro:property name="wheel_width" value="0.05" />
   <xacro:property name="gear_ratio" value="5.0"/>
+  <xacro:property name="steps_per_revolution" value="200.0"/>
+  <!-- Bricklet microstep mode: must match SILENT_STEPPER_V2_STEP_RESOLUTION_*
+       configured in cmeresearch_stepper_driver. 8 = 1/8 step (8 microsteps per full step). -->
+  <xacro:property name="step_resolution" value="8"/>
 
   <xacro:property name="chassis_length" value="0.500" />
   <xacro:property name="chassis_width" value="0.350" />
