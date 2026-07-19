@@ -7,17 +7,17 @@
 
 
   <!-- Import robot description -->
-  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexamini/cmexamini_description.urdf.xacro" />
+  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexamini/robot_description.urdf.xacro" />
 
   <!-- Robot constants and properties -->
 
-  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexamini/cmexamini_properties.urdf.xacro" />
+  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexamini/robot_properties.urdf.xacro" />
 
   <!-- Import Rviz colors -->
   <xacro:include filename="$(find cmeresearch_description)/urdf/materials.xacro" />
 
   <!-- Import ros2_control description -->
-  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexamini/cmexamini_diff.ros2_control.xacro" />
+  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexamini/robot_diff.ros2_control.xacro" />
 
   <!-- Instantiate the robot -->
   <xacro:cmexb prefix="$(arg prefix)" />
