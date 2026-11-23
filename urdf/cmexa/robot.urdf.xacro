@@ -3,26 +3,27 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mecanumdrive_robot">
   <!-- Parameters -->
   <xacro:arg name="use_mock_hardware" default="false" />
+  <xacro:arg name="prefix" default="" />
 
 
   <!-- Import robot description -->
-  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexa/cmexa_description.urdf.xacro" />
+  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexa/robot_description.urdf.xacro" />
 
   <!-- Robot constants and properties -->
 
-  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexa/cmexa_properties.urdf.xacro" />
+  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexa/robot_properties.urdf.xacro" />
 
   <!-- Import Rviz colors -->
   <xacro:include filename="$(find cmeresearch_description)/urdf/materials.xacro" />
 
   <!-- Import ros2_control description -->
-  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexa/cmexa_mecanum.ros2_control.xacro" />
+  <xacro:include filename="$(find cmeresearch_description)/urdf/cmexa/robot_mecanum.ros2_control.xacro" />
 
   <!-- Instantiate the robot -->
-  <xacro:cmexa />
+  <xacro:cmexa prefix="$(arg prefix)" />
 
   <!-- Add ros2_control -->
   <xacro:cmexa_ros2_control
-    name="Cmexa" use_mock_hardware="$(arg use_mock_hardware)"/>
+    name="Cmexa" use_mock_hardware="$(arg use_mock_hardware)" prefix="$(arg prefix)"/>
 
 </robot>
